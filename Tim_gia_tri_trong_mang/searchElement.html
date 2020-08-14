@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Element in Array</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt("Nhập số phần tử của mảng: "));
+    while (n < 0) {
+        n = parseInt(prompt("Nhập không hợp lệ, mời nhập lại! "));
+    }
+    if (n === 0) {
+        document.write("Mảng rỗng!");
+    } else {
+        let arr = Array();
+        let rs = "Mảng đã nhập là: [";
+        let i;
+        for (i = 0; i < n; i++) {
+            arr[i] = prompt("Nhập phần tử thứ " + (i + 1));
+            if (i === n - 1) {
+                rs += arr[i] + "]<br>";
+            } else {
+                rs += arr[i] + ", ";
+            }
+        }
+        let element = prompt("Nhập phần tử cần tìm kiếm:");
+        let isExist = false;
+        rs+="Phần tử cần tìm là: "+element+"<br>";
+        for(i=0;i<n;i++){
+            if(arr[i]===element){
+                isExist=true;
+                break;
+            }
+        }
+        if(isExist){
+            rs+="Tìm thấy phần tử "+element+" tại vị trí thứ "+(i+1);
+        } else{
+            rs+="Không tìm thấy phần tử. "+element;
+        }
+        document.write(rs);
+    }
+
+</script>
+</body>
+</html>
