@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reverse Array</title>
+</head>
+<body>
+<script>
+    let n = parseInt(prompt("Nhập số phần tử của mảng: "));
+    while(n<0){
+      n = parseInt(prompt("Nhập không hợp lệ, mời nhập lại! "));
+    }
+    if(n===0){
+        document.write("Mảng rỗng!");
+    } else {
+        let arrPre = Array();
+        let rs="Mảng đã nhập là: [";
+        for(let i=0;i<n;i++){
+            arrPre[i] = prompt("Nhập phần tử thứ "+(i+1));
+            if(i===n-1){
+                rs+=arrPre[i]+"]<br>";
+            } else {
+                rs+=arrPre[i]+", ";
+            }
+        }
+        rs+="Mảng sau khi đảo ngược là: [";
+        let arrAfter = Array();
+        for(let i=0;i<n;i++){
+            arrAfter[i] = arrPre[n-1-i];
+            if(i===n-1){
+                rs+=arrAfter[i]+"]<br>";
+            } else {
+                rs+=arrAfter[i]+", ";
+            }
+        }
+        document.write(rs);
+    }
+</script>
+</body>
+</html>
