@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Convert</title>
+</head>
+<body>
+<script>
+    let str = prompt("Enter a string:");
+    const UPPER = "QWERTYUIOPASDFGHJKLZXCVBNM";
+    const LOWER = UPPER.toLowerCase();
+    let rs = [];
+
+    for(let i=0;i<str.length;i++){
+        if(UPPER.includes(str[i])){
+            rs.push(str[i].toLowerCase());
+        } else if(LOWER.includes(str[i])){
+            rs.push(str[i].toUpperCase());
+        } else rs.push(str[i]);
+    }
+    console.log(rs.toString());
+</script>
+</body>
+</html>

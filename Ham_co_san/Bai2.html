@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai2</title>
+</head>
+<body>
+<script>
+    let stringNumber =prompt("Nhập chuỗi số: ").toString();
+    let arr = [stringNumber[0]];
+    for(let i=1;i<stringNumber.length;i++){
+        if(stringNumber[i]%2===0&&stringNumber[i-1]%2===0){
+            arr.push("-",stringNumber[i]);
+        } else arr.push(stringNumber[i]);
+    }
+    console.log(arr);
+</script>
+</body>
+</html>
