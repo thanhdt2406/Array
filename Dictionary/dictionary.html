@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dictionary</title>
+</head>
+<body>
+<script>
+    let engDict = ["hello","thank you","goodbye"];
+    let vieDict = ["xin chào","cảm ơn","tạm biệt"];
+    let word = prompt("Nhập từ bạn muốn tra cứu: ");
+    if( engDict.includes(word)){
+        document.write(vieDict[engDict.indexOf(word)]);
+    } else alert("Không tìm thấy từ");
+</script>
+</body>
+</html>
