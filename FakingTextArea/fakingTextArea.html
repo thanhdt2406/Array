@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faking Text Area</title>
+    <style>
+        .container{
+            width: 30%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Type anything slowly</h1>
+    <label><textarea id="text" cols="50" rows="10" onkeydown="fakingText()"></textarea></label>
+</div>
+<script>
+    let arrStr = ["I","m"," ","a", " ","f","o","o","l","!","!"];
+    let n="";
+    function fakingText() {
+        let t = document.getElementById("text").value;
+        if(t.length>0){
+            for(let i=0;i<t.length;i++){
+                n += arrStr[i];
+                if(i===11){
+                    document.getElementById("text").value ="";
+                    n="";
+                }
+
+            }
+        }
+        document.getElementById("text").value = n;
+        n="";
+        setTimeout("fakingText()",1);
+    }
+</script>
+</body>
+</html>
