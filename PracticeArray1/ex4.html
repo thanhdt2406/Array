@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let t;
+
+    let n=parseInt(prompt("Nhập số phần tử: "));
+    while(n<=0){
+        n=parseInt(prompt("Số phần tử không hợp lệ, vui lòng nhập lại:"))
+    }
+
+    t="Các phần tử đã nhập là: <br>";
+    for(let i=0;i<n;i++){
+        arr[i] = parseInt(prompt("Nhập phần tử thứ "+(i+1)));
+        t+="Phần tử thứ "+(i+1)+": "+arr[i]+"<br>";
+    }
+
+    t+="<br>Mảng sau khi đảo ngược là: <br>";
+    for(let i=0;i<n/2;i++){
+        let temp=arr[i];
+        arr[i]=arr[(arr.length-1)-i];
+        arr[(arr.length-1)-i]=temp;
+    }
+
+    for(let i=0;i<n;i++){
+        t+="Phần tử thứ "+(i+1)+": "+arr[i]+"<br>";
+    }
+    document.write(t);
+</script>
+</body>
+</html>
