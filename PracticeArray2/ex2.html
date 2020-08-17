@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    let arr=[];
+
+    let n = parseInt(prompt("Enter array length: "));
+    while (n<=0){
+        n=parseInt(prompt("Error. Try again! "));
+    }
+
+    let rs="Các phần tử đã nhập là: <br>";
+    for(let i=0;i<n;i++){
+        arr[i]=prompt("Enter array["+i+"]: ");
+        rs+=arr[i] + "<br>";
+    }
+
+    rs+="<br>Mảng sau khi đảo ngược là: <br>";
+    arr.reverse();
+    for(let i=0;i<arr.length;i++){
+        rs+=arr[i] + "<br>";
+    }
+    document.write(rs);
+</script>
+</body>
+</html>
