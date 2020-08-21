@@ -5,13 +5,42 @@
     <title>Dictionary</title>
 </head>
 <body>
+<input type="text" id="inputWord" oninput="search();" onchange="search();">
+<select id="type">
+    <option value="E_V">Eng->Vie</option>
+    <option value="V_E">Vie->Eng</option>
+</select>
+<input type="text" id="result" disabled>
 <script>
-    let engDict = ["hello","thank you","goodbye"];
-    let vieDict = ["xin chào","cảm ơn","tạm biệt"];
-    let word = prompt("Nhập từ bạn muốn tra cứu: ");
-    if( engDict.includes(word)){
-        document.write(vieDict[engDict.indexOf(word)]);
-    } else alert("Không tìm thấy từ");
+    let engDict = ["hello", "thank you", "goodbye", "cat", "dog", "bear"];
+    let vieDict = ["xin chào", "cảm ơn", "tạm biệt", "mèo", "chó", "gấu"];
+
+    function search() {
+        let word = document.getElementById("inputWord").value;
+        let type = document.getElementById("type").value;
+
+        if (type === "E_V") {
+            for (let i = 0; i <= engDict.length; i++) {
+                if (word === engDict[i]) {
+                    document.getElementById("result").value = vieDict[i];
+                    break;
+                }
+                if (i === engDict.length) {
+                    document.getElementById("result").value = "Không tìm thấy từ";
+                }
+            }
+        } else if (type === "V_E") {
+            for (let i = 0; i <= vieDict.length; i++) {
+                if (word === vieDict[i]) {
+                    document.getElementById("result").value = engDict[i];
+                    break;
+                }
+                if (i === vieDict.length) {
+                    document.getElementById("result").value = "Không tìm thấy từ";
+                }
+            }
+        }
+    }
 </script>
 </body>
 </html>
